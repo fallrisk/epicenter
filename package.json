@@ -1,0 +1,13 @@
+{
+  "author": "Justin Watson",
+  "name": "Epicenter",
+  "description": "Program to make bets on location of the epicenter of earthquakes.",
+  "devDependencies": {
+        "mongoose": "*",
+        "phantomjs" : "*",
+        "karma" : "*",
+        "karma-junit-reporter" : "*",    
+        "karma-jasmine" : "*",
+        "karma-ng-scenario" : "*"
+    }
+}

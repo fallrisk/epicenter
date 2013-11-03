@@ -1,0 +1,66 @@
+[
+	{
+		"name": "Fred Flinstone",
+		"location": "San Mateo, CA"
+	},
+	{
+		"name": "Barney Rubble",
+		"location": "San Diego, CA"
+	},
+	{
+		"name": "George Jetson",
+		"location": "San Jose, CA"
+	},
+	{
+		"name": "Shaggy",
+		"location": "San Jose, CA"
+	},
+	{
+		"name": "Velma",
+		"location": "San Jose, CA"
+	},
+	{
+		"name": "Scooby Doo",
+		"location": "San Jose, CA"
+	},
+	{
+		"name": "Dastardly",
+		"location": "San Jose, CA"
+	},
+	{
+		"name": "Penelope",
+		"location": "San Jose, CA"
+	},
+	{
+		"name": "Krumelmonster",
+		"location": "San Jose, CA"
+	},
+	{
+		"name": "Daphne",
+		"location": "San Jose, CA"
+	},
+	{
+		"name": "Scrappy Doo",
+		"location": "San Jose, CA"
+	},
+	{
+		"name": "Elroy Jetson",
+		"location": "San Jose, CA"
+	},
+	{
+		"name": "Black Dynamite",
+		"location": "San Jose, CA"
+	},
+	{
+		"name": "Riley Freeman",
+		"location": "San Jose, CA"
+	},
+	{
+		"name": "Robert Freeman",
+		"location": "San Jose, CA"
+	},
+	{
+		"name": "Huey Freeman",
+		"location": "San Jose, CA"
+	}
+]
