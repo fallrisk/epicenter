@@ -24,6 +24,7 @@ angular.module('epicenterApp.controllers', []).
       var index = $scope.pool.bets.indexOf(bet);
       if (index > -1) {
         $scope.pool.bets.splice(index, 1);
+        removeMarkerByTitle(bet.name);
         $scope.pool.$save();
       }
     };

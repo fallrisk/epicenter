@@ -2,6 +2,7 @@
 
 var epicenterMap;
 var epicenterLatLng = new google.maps.LatLng(36.05, -118.25);
+var epicenterMarkers = [];
 
 function initialize() {
   var mapOptions = {
@@ -37,16 +38,28 @@ function generateMarker (name, address) {
       // Using the latitude and longitude add a marker to the map.
       // (https://developers.google.com/maps/documentation/javascript/markers)
       if (1 == results.length) {
-        var marker = new google.maps.Marker({
+        epicenterMarkers.push(new google.maps.Marker({
           position: results[0].geometry.location,
           title: name,
+          animation: google.maps.Animation.DROP,
           map: epicenterMap
-        });
+        }));
       }
     }
 
   });
 
+}
+
+function removeMarkerByTitle (title) {
+  console.log('title: ' + title);
+  for (var i = epicenterMarkers.length - 1; i >= 0; i--) {
+    if (epicenterMarkers[i].title == title) {
+      console.log('marker title: ' + epicenterMarkers[i].title);
+      epicenterMarkers[i].setMap(null);
+      break;
+    }
+  };
 }
 
 // Returns the number of actual addresses that match the address.
