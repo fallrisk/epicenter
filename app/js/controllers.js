@@ -5,6 +5,8 @@
 angular.module('epicenterApp.controllers', []).
   controller('PoolCtrl', ['$scope', '$http', '$routeParams', 'Pool', function ($scope, $http, $routeParams, Pool) {
 
+    $scope.viewSlideAnimation = 'slide-left';
+
     $scope.pool = Pool.get({poolId: $routeParams.poolId}, function (pool) {
       // Create a marker on the map for each bet.
       for (var i = pool.bets.length - 1; i >= 0; i--) {
