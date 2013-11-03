@@ -1,0 +1,27 @@
+
+.bet-listing.ng-enter,
+.bet-listing.ng-leave,
+.bet-listing.ng-move {
+  -webkit-transition: 0.5s linear all;
+  -moz-transition: 0.5s linear all;
+  -o-transition: 0.5s linear all;
+  transition: 0.5s linear all;
+}
+
+.bet-listing.ng-enter,
+.bet-listing.ng-move {
+  opacity: 0;
+}
+
+.bet-listing.ng-move.ng-move-active,
+.bet-listing.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+
+.bet-listing.ng-leave {
+  opacity: 1;
+}
+
+.bet-listing.ng-leave.ng-leave-active {
+  opacity: 0;
+}

@@ -21,7 +21,7 @@
           </div>
 
           <ul class="list-group bets">
-            <li class="list-group-item" ng-repeat="bet in pool.bets | filter:beterQuery">
+            <li class="list-group-item bet-listing" ng-repeat="bet in pool.bets | filter:beterQuery">
               <button type="button" class="close" ng-click="removeBet(bet)">&times;</button>
                 <span class="name">{{bet.name}}</span>
                 <a href="#" class="location">{{bet.location}}</a>
