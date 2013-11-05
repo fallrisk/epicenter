@@ -66,12 +66,34 @@ div.pool-sidebar {
 }
 
 .container {
-  padding-left: 0px;
+ /* padding-left: 0px;
   padding-right: 0px;
   margin-left: 0px;
-  margin-right: 0px;
+  margin-right: 0px;*/
 }
 
 #map-canvas { 
   
+}
+
+/* Styles for the start page seismometer. */
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.line {
+  fill: none;
+  stroke: black;
+  stroke-width: 1.5px;
+}
+
+#seismometer {
+  height: 200px;
 }

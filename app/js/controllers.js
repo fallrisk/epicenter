@@ -40,4 +40,19 @@ angular.module('epicenterApp.controllers', []).
 
   .controller('StartCtrl', ['$scope', function($scope) {
     $scope.newPoolId = token();
+    seismometer.start();
+
+    // var resize = function() {
+    //   var h = $(window).height();
+    //   var w = $(window).width();
+
+    //   $('.container').attr('height', h);
+    //   $('#seismometer').attr('width', w);
+    //   $('#seismometer').attr('height', 200);
+    // };
+
+    // resize();
+    // $(window).resize(function () {
+    //   resize();
+    // });
   }]);
