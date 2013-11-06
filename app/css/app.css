@@ -31,49 +31,22 @@
 
 body {
   padding-top: 30px;
+  background-color: #997347;
 }
 
-div.add-bet-form {
-  /*max-width: 250px;*/
+/* Style for start.html */
+.btn {
+  background-color: #827442;
+  border-color: #827442;
 }
 
-ul.bets {
-  list-style-type: none;
-  margin: 0px;
-  margin-top: 5px;
-  overflow-y: scroll;
-  overflow-x: none;
-  height: 300px;
+.btn:hover {
+  background-color: #788E42;
+  border-color: #788E42;
 }
 
-div.bet-list {
-  
-}
-
-.add-bet-btn {
-  margin-top: 5px;
-}
-
-div.pool-sidebar {
-  /* Make the height the size of the screen. */
-  /*background-color: rgb(247, 247, 249);*/
-  /*background-color: rgb(90, 90, 90);*/
-}
-
-.new-pool-btn {
-  background-color: #A64800;
-  border-color: #A64800;
-}
-
-.container {
- /* padding-left: 0px;
-  padding-right: 0px;
-  margin-left: 0px;
-  margin-right: 0px;*/
-}
-
-#map-canvas { 
-  
+.jumbotron {
+  background-color: #959947;
 }
 
 /* Styles for the start page seismometer. */
@@ -97,3 +70,36 @@ div.pool-sidebar {
 #seismometer {
   height: 200px;
 }
+
+/* Style for pool.html */
+div.add-bet-form {
+  /*max-width: 250px;*/
+}
+
+ul.bets {
+  list-style-type: none;
+  margin: 0px;
+  margin-top: 5px;
+  overflow-y: scroll;
+  overflow-x: none;
+  height: 300px;
+}
+
+div.bet-list {
+  
+}
+
+.add-bet-form .form-control {
+  margin-top: 5px;
+}
+
+div.pool-sidebar {
+  /* Make the height the size of the screen. */
+  /*background-color: rgb(247, 247, 249);*/
+  /*background-color: rgb(90, 90, 90);*/
+}
+
+#map-canvas { 
+  
+}
+

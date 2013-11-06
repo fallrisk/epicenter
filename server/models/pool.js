@@ -9,10 +9,10 @@ var Pool = mongoose.model('Pool', PoolSchema);
 // The save will occur when a bet is placed.
 exports.findByIdOrNew = function (req, res, next) {
   var pool;
-  Pool.findOne({poolId: req.params.poolId}, function(error, result) {
+  var poolId = req.params.poolId;
+  Pool.findOne({poolId: poolId}, function(error, result) {
     if (error) {
       console.log('Find error' + err);
-      return next(error);
     }
 
     if (result != null) {

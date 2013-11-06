@@ -4,6 +4,10 @@ var epicenterMap;
 var epicenterLatLng = new google.maps.LatLng(36.05, -118.25);
 var epicenterMarkers = [];
 
+function epicenter () {
+
+}
+
 function initialize() {
   var mapOptions = {
     center: epicenterLatLng,
@@ -45,10 +49,10 @@ function generateMarker (name, address) {
           map: epicenterMap
         }));
       }
+
     }
 
   });
-
 }
 
 function removeMarkerByTitle (title) {
@@ -98,7 +102,7 @@ function Seismometer () {
   this.nextQuakeTime = this.dt.getTime() + Math.floor((Math.random()*10)+1) * 1000;
   this.quakeEndTime = null;
   this.inQuake = false;
-};
+}
 
 Seismometer.prototype.createSvg = function () {
   var self = this;
@@ -166,5 +170,3 @@ Seismometer.prototype.start = function() {
   this.createSvg();
   this.tick();
 };
-
-var seismometer = new Seismometer();
