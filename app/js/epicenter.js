@@ -49,17 +49,13 @@ function generateMarker (name, address) {
           map: epicenterMap
         }));
       }
-
     }
-
   });
 }
 
 function removeMarkerByTitle (title) {
-  console.log('title: ' + title);
   for (var i = epicenterMarkers.length - 1; i >= 0; i--) {
     if (epicenterMarkers[i].title == title) {
-      console.log('marker title: ' + epicenterMarkers[i].title);
       epicenterMarkers[i].setMap(null);
       break;
     }
@@ -68,15 +64,17 @@ function removeMarkerByTitle (title) {
 
 // Returns the number of actual addresses that match the address.
 // Uses geocoding to see how many latlng match.
-function numberOfLocations(address) {
-  var geocoder = new google.maps.Geocoder();
-  geocoder.geocode( {'address': address, latLng: epicenterLatLng }, function(results, status) {
-    if (status == google.maps.GeocoderStatus.OK) {
-      return results.length;
-    }
-    return 0;
-  });
-}
+// function numberOfLocations(address) {
+//   var geocoder = new google.maps.Geocoder();
+//   var deferred = $q.defer();
+//   geocoder.geocode( {'address': address, latLng: epicenterLatLng }, function(results, status) {
+//     if (status == google.maps.GeocoderStatus.OK) {
+//       return deferred.resolve(results.length);
+//     }
+//     return deferred.reject();
+//   });
+//   return deferred.promise;
+// }
 
 /**
  * Seismometer Graph

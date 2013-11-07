@@ -9,21 +9,28 @@ angular.module('epicenterApp.directives', []).
       elm.text(version);
     };
   }]).
-  directive('validLocation', function() {
-    console.log('here');  
+  directive('validLocation', ['GeoCode', function(geoCode) { 
     return {
       require: 'ngModel',
       link: function(scope, elm, attrs, ctrl) {
-        ctrl.$parsers.unshift(function(viewValue) {
-          console.log('here');
-          if (1 == numberOfLocations(viewValue)) {
-            ctrl.$setValidity('validLocation', true);
-            return viewValue;
-          } else {
+        ctrl.$parsers.push(function(viewValue) {
+          if (viewValue.length < 5) {
             ctrl.$setValidity('validLocation', false);
-            return undefined;            
+            return undefined;
           }
+          geoCode.numberOfLocations(viewValue)
+          .then(function(results) {
+            // console.log('numberOfLocations(viewValue): ' + numberOfLocations(viewValue));
+            console.log('results', results);
+            if (1 == results) {
+              ctrl.$setValidity('validLocation', true);
+              return viewValue;
+            } else {
+              ctrl.$setValidity('validLocation', false);
+              return undefined;
+            }
+          });
         });
       }
     };
-  });
+  }]);
