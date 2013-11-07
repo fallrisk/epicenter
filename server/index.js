@@ -59,6 +59,10 @@ app.post('/REST/pool', function(req, res, next) {
   Pool.update(req, res, next); 
 });
 
+app.get('/REST/pool', function() {
+  Pool.findAll(req, res, next);
+});
+
 // Start the servers.
 // This needs to be at the bottom of the code.
 app.listen(PORT, function (){

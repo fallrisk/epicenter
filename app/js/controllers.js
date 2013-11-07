@@ -45,5 +45,5 @@ angular.module('epicenterApp.controllers', []).
     var w = $(window).width();
     seismometer.width = $('.jumbotron').width();
     seismometer.height = $('.jumbotron').height() + 100;
-    seismometer.start();
+    // seismometer.start();
   }]);

@@ -1,36 +1,33 @@
-<div class="container">
-    <div class="col-md-4 pool-sidebar">
-
-      <div class="panel panel-default add-bet-form">
-        <div class="panel-heading">Add a Bet</div>
-        <div class="panel-body">
-          <form name="newBetForm" novalidate class="app-form">
-            <input class="form-control" ng-model="newBet.name" placeholder="Name" required>
-            <input class="form-control" ng-model="newBet.location" placeholder="Location" required>
-            <button class="form-control btn btn-success add-bet-btn" ng-click="addBet()">Add Bet</button>
-          </form>
-        </div>
-      </div>
-
-      <div class="panel panel-default bet-list">
-        <div class="panel-heading">Bet List</div>
-        <div class="panel-body">
-          <div class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
-            <input type="text" class="form-control search-query" placeholder="Search" ng-model="beterQuery">
-          </div>
-
-          <ul class="list-group bets">
-            <li class="list-group-item bet-listing" ng-repeat="bet in pool.bets | filter:beterQuery">
-              <button type="button" class="close" ng-click="removeBet(bet)">&times;</button>
-                <span class="name">{{bet.name}}</span>
-                <a href="#" class="location">{{bet.location}}</a>
-            </li>
-          </ul>
-        </div>
+<div class="container pool-view">
+  <div class="col-md-4 pool-sidebar">
+    <div class="panel panel-default add-bet-form">
+      <div class="panel-heading">Add a Bet</div>
+      <div class="panel-body">
+        <form novalidate name="newBetForm" class="app-form css-form">
+          <input type="text" name="fName" class="form-control" ng-model="newBet.name" placeholder="Name" ng-pattern="/^[a-zA-Z ]*$/" required>
+          <span ng-show="newBetForm.fName.$error.pattern">Invalid name.</span>
+          <input type="text" name="fLocation" class="form-control" ng-model="newBet.location" placeholder="Location" required>
+          <button class="form-control btn btn-success add-bet-btn" ng-disabled="newBetForm.$invalid" ng-click="addBet(newBet)">Add Bet</button>
+        </form>
       </div>
     </div>
+    <div class="panel panel-default bet-list">
+      <div class="panel-heading">Bet List</div>
+      <div class="panel-body">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+          <input type="text" class="form-control search-query" placeholder="Search" ng-model="beterQuery">
+        </div>
 
-    <div class="col-md-8" id="map-canvas"></div>
-
+        <ul class="list-group bets">
+          <li class="list-group-item bet-listing" ng-repeat="bet in pool.bets | filter:beterQuery">
+            <button type="button" class="close" ng-click="removeBet(bet)">&times;</button>
+              <span class="name">{{bet.name}}</span>
+              <a href="#" class="location">{{bet.location}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-8" id="map-canvas"></div>
 </div>

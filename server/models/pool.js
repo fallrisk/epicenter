@@ -42,7 +42,7 @@ exports.findById = function (req, res, next) {
 
 exports.findAll = function (req, res, next) {
   Pool.findAll({}, function(error, results) {
-  res.send(200, results);
+    res.send(200, results);
   });
 };
 

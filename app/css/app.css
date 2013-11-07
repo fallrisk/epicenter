@@ -30,8 +30,37 @@
 }
 
 body {
-  padding-top: 30px;
+  padding-top: 70px;
   background-color: #997347;
+  background-image: url('../img/soil_ground_0045_01_preview.jpg');
+  background-size: cover;
+}
+
+footer {
+  background-color: #827442;
+  height: 60px;
+}
+
+footer > .container {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+  bottom: 0px;
+}
+
+#epicenter-icon {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  /*margin-left: 20px;*/
+ /* margin-right: 20px;*/
+}
+
+.navbar-brand {
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 /* Style for start.html */

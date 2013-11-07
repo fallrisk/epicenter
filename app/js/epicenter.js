@@ -4,7 +4,7 @@ var epicenterMap;
 var epicenterLatLng = new google.maps.LatLng(36.05, -118.25);
 var epicenterMarkers = [];
 
-function epicenter () {
+function Epicenter () {
 
 }
 
@@ -27,9 +27,9 @@ function resizeHeight () {
   var h = $(window).height();
   var w = $(window).width();
   // Resize the fluid-container. 
-  $('.container').height(h - 60)
+  $('.pool-view').height(650);
   // $('.pool-sidebar').height(h - 20);
-  $('#map-canvas').height(h - 60);
+  $('#map-canvas').height(600);
 }
 
 function generateMarker (name, address) {
