@@ -5,6 +5,7 @@
 angular.module('epicenterApp', [
   'ngRoute',
   'ngAnimate',
+  'epicenterApp.directives',
   'epicenterApp.controllers',
   'epicenterApp.services'
 ]).
