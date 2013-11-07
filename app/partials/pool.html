@@ -5,8 +5,8 @@
       <div class="panel-body">
         <form novalidate name="newBetForm" class="app-form css-form">
           <input type="text" name="fName" class="form-control" ng-model="newBet.name" placeholder="Name" ng-pattern="/^[a-zA-Z ]*$/" required>
-          <span ng-show="newBetForm.fName.$error.pattern">Invalid name.</span>
-          <input type="text" name="fLocation" class="form-control" ng-model="newBet.location" placeholder="Location" required>
+          <!-- <span ng-show="newBetForm.fName.$error.pattern">Invalid name.</span> -->
+          <input type="text" name="fLocation" class="form-control" ng-model="newBet.location" placeholder="Location" ng-pattern="/^[a-zA-Z, ]*$/" required>
           <button class="form-control btn btn-success add-bet-btn" ng-disabled="newBetForm.$invalid" ng-click="addBet(newBet)">Add Bet</button>
         </form>
       </div>
