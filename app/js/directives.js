@@ -14,22 +14,19 @@ angular.module('epicenterApp.directives', []).
       require: 'ngModel',
       link: function(scope, elm, attrs, ctrl) {
         ctrl.$parsers.push(function(viewValue) {
-          if (viewValue.length < 5) {
+          if (viewValue != undefined && viewValue.length < 5) {
             ctrl.$setValidity('validLocation', false);
             return undefined;
           }
           geoCode.numberOfLocations(viewValue)
           .then(function(results) {
-            // console.log('numberOfLocations(viewValue): ' + numberOfLocations(viewValue));
-            console.log('results', results);
             if (1 == results) {
               ctrl.$setValidity('validLocation', true);
-              return viewValue;
             } else {
               ctrl.$setValidity('validLocation', false);
-              return undefined;
             }
           });
+        return viewValue;
         });
       }
     };

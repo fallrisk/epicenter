@@ -21,6 +21,7 @@ exports.findByIdOrNew = function (req, res, next) {
     } else {
       // console.log('Created new pool');
       pool = new Pool({poolId: poolId});
+      pool.save();
     }
 
     res.send(200, pool);
@@ -41,7 +42,7 @@ exports.findById = function (req, res, next) {
 };
 
 exports.findAll = function (req, res, next) {
-  Pool.findAll({}, function(error, results) {
+  Pool.find(function(error, results) {
     res.send(200, results);
   });
 };
@@ -73,15 +74,15 @@ exports.addBet = function(req, res, next) {
 
 exports.update = function(req, res, next) {
   var poolId = req.body.poolId;
+  var bets = req.body.bets
+  var id = req.body._id;
 
-  var pool = {
-    poolId: poolId,
-    bets: req.body.bets
-  };
-
-  Pool.update({poolId: poolId}, pool, function (error) {
+  Pool.findByIdAndUpdate(id, {$set: {bets: bets}}, function (error, pool) {
     if (error) {
       console.log(error);
+      return error;
+    } else {
+      res.send(200, pool);
     }
   });
 };

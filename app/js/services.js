@@ -3,29 +3,28 @@
 /* Services */
 
 angular.module('epicenterApp.services', ['ngResource'])
-	.value('version', 'v0.0.1')
-	.factory('Pool', [ '$http', '$resource', function($http, $resource) {
-		return $resource('REST/pool/:poolId', {}, {
-			query: {method: 'GET', params:{poolId: ''}},
-			addBet: {method: 'POST', params:{poolId: '@poolId'}, url: 'REST/pool/addBet'}
-		});
-	}])
-	.factory('GeoCode', function($q) {
-		return { 
-			numberOfLocations: function(address) {
-				var geocoder = new google.maps.Geocoder();
-				var deferred = $q.defer();
-				geocoder.geocode( {'address': address, latLng: epicenterLatLng }, function(results, status) {
-					if (status == google.maps.GeocoderStatus.OK) {
-						console.log(results);
-						return deferred.resolve(results.length);
-					}
-					return deferred.reject();
-				});
-				return deferred.promise;
-			}
-		};
-	});
+  .value('version', 'v0.0.1')
+  .factory('Pool', [ '$http', '$resource', function($http, $resource) {
+    return $resource('REST/pool/:poolId', {}, {
+      query: {method: 'GET', params:{poolId: ''}, isArray: true},
+      addBet: {method: 'POST', params:{poolId: '@poolId'}, url: 'REST/pool/addBet'}
+    });
+  }])
+  .factory('GeoCode', function($q) {
+    return { 
+      numberOfLocations: function(address) {
+        var geocoder = new google.maps.Geocoder();
+        var deferred = $q.defer();
+        geocoder.geocode( {'address': address, latLng: epicenterLatLng }, function(results, status) {
+          if (status == google.maps.GeocoderStatus.OK) {
+            return deferred.resolve(results.length);
+          }
+          return deferred.reject();
+        });
+        return deferred.promise;
+      }
+    };
+  });
 
 // TODO Function to add a bet.
 

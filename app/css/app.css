@@ -29,23 +29,45 @@
   padding: 0;
 }
 
+html {
+  height: 100%;
+}
+
 body {
-  padding-top: 70px;
-  background-color: #997347;
-  background-image: url('../img/soil_ground_0045_01_preview.jpg');
-  background-size: cover;
+  /*background-color: #997347;*/
+  /*background-image: url('../img/dirt_04.png');*/
+  background-repeat: repeat;
+  height: 100%;
 }
 
 footer {
-  background-color: #827442;
-  height: 60px;
+  color: white;
+  background-color: #333;
 }
 
 footer > .container {
   padding-left: 15px;
   padding-right: 15px;
-  padding-top: 15px;
-  bottom: 0px;
+}
+
+footer > .container > p {
+  margin: 0px;
+  height: 64px;
+}
+
+.version {
+  float: right;
+  margin-top: 40px;
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto;
+  /* Negative indent footer by its height */
+  margin: 0 auto -64px;
+  /* Pad bottom by footer height */
+  padding: 0 0 64px;
 }
 
 #epicenter-icon {
@@ -53,14 +75,12 @@ footer > .container {
   padding: 0;
 }
 
-.container {
-  /*margin-left: 20px;*/
- /* margin-right: 20px;*/
-}
-
-.navbar-brand {
-  padding-top: 0;
-  padding-bottom: 0;
+.street-sign {
+  background-color: #0F4F0C;
+  border-color: black;
+  border-width: 2px;
+  border-style: solid;
+  color: white;
 }
 
 /* Style for start.html */
@@ -72,10 +92,6 @@ footer > .container {
 .btn:hover {
   background-color: #788E42;
   border-color: #788E42;
-}
-
-.jumbotron {
-  background-color: #959947;
 }
 
 /* Styles for the start page seismometer. */

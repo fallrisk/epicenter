@@ -11,6 +11,7 @@ angular.module('epicenterApp', [
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/pool/:poolId', {templateUrl: 'partials/pool.html', controller: 'PoolCtrl'});
-  $routeProvider.when('/start', {templateUrl: 'partials/start.html', controller: 'StartCtrl'})
+  $routeProvider.when('/start', {templateUrl: 'partials/start.html', controller: 'StartCtrl'});
+  $routeProvider.when('/adm', {templateUrl: 'partials/adm.html', controller: 'AdminCtrl'});
   $routeProvider.otherwise({redirectTo: '/start'});
 }]);

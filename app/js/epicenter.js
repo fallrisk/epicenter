@@ -29,7 +29,7 @@ function resizeHeight () {
   // Resize the fluid-container. 
   $('.pool-view').height(650);
   // $('.pool-sidebar').height(h - 20);
-  $('#map-canvas').height(600);
+  $('#map-canvas').height(620);
 }
 
 function generateMarker (name, address) {

@@ -5,8 +5,6 @@
 angular.module('epicenterApp.controllers', []).
   controller('PoolCtrl', ['$scope', '$http', '$routeParams', 'Pool', function ($scope, $http, $routeParams, Pool) {
 
-    $scope.viewSlideAnimation = 'slide-left';
-
     $scope.pool = Pool.get({poolId: $routeParams.poolId}, function (pool) {
       // Create a marker on the map for each bet.
       for (var i = pool.bets.length - 1; i >= 0; i--) {
@@ -14,10 +12,11 @@ angular.module('epicenterApp.controllers', []).
       }
     });
 
-    $scope.addBet = function () {
-      $scope.pool.bets.push({name: $scope.newBet.name, location: $scope.newBet.location});
-      generateMarker($scope.newBet.name, $scope.newBet.location);
+    $scope.addBet = function (newBet) {
+      $scope.pool.bets.push({name: newBet.name, location: newBet.location});
+      generateMarker(newBet.name, newBet.location);
       $scope.pool.$save();
+      $scope.newBet = {};
     };
 
     $scope.removeBet = function (bet) {
@@ -40,10 +39,16 @@ angular.module('epicenterApp.controllers', []).
 
   .controller('StartCtrl', ['$scope', function($scope) {
     $scope.newPoolId = token();
-    var seismometer = new Seismometer();
-    var h = $(window).height();
-    var w = $(window).width();
-    seismometer.width = $('.jumbotron').width();
-    seismometer.height = $('.jumbotron').height() + 100;
+    // var seismometer = new Seismometer();
+    // var h = $(window).height();
+    // var w = $(window).width();
+    // seismometer.width = $('.jumbotron').width();
+    // seismometer.height = $('.jumbotron').height() + 100;
     // seismometer.start();
+  }])
+
+  .controller('AdminCtrl', ['$scope', 'Pool', function($scope, Pool) {
+    $scope.pools = Pool.query({}, function(pools) {
+    });
+
   }]);
