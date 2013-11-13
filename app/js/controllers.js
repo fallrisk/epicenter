@@ -31,8 +31,10 @@ angular.module('epicenterApp.controllers', []).
     // Adjust the height of the view.
     initialize();
 
-    resizeHeight();
     $(window).resize(function () {
+      resizeHeight();
+    });
+    $(window).load( function() {
       resizeHeight();
     });
   }])

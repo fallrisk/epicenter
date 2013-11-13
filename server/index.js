@@ -56,7 +56,6 @@ app.post('/REST/pool/:poolId/addBet', function(req, res, next) {
 app.post('/REST/pool', function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "http://localhost");
   res.header("Access-Control-Allow-Methods", "GET, POST, PUT");
-  console.log('applying update');
   Pool.update(req, res, next); 
 });
 

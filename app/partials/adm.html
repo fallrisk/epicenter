@@ -1,8 +1,8 @@
 <ul class="list-group pools">
-  <li class="list-group-item" ng-repeat="pool in pools">
+  <li class="list-group-item pool" ng-repeat="pool in pools">
       <span class="name">{{pool.poolId}}</span>
-      <ul class="list-group">
-        <li class="list-group-item" ng-repeat="bet in pool.bets">
+      <ul class="list-group bets">
+        <li class="list-group-item bet" ng-repeat="bet in pool.bets">
           <span>{{bet.name}}</span><span> @ </span><span>{{bet.location}}</span>
         </li>
       </ul>

@@ -61,7 +61,6 @@ exports.addBet = function(req, res, next) {
     }
 
     pool = result;
-    console.log(pool);
     // Add the bet to the pool.
     pool.bets.push({name: req.body.name, location: req.body.location});
     pool.save(function(error) {
